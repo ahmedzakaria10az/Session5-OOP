@@ -31,7 +31,7 @@ namespace Session5_OOP
             return EstimatedCost * 0.05m;
         }
 
-        public override void PrintShipment()
+        public void PrintShipment()
         {
             Console.WriteLine($"Tracking Code: {TrackingCode}");
             Console.WriteLine($"Weight: {Weight}");

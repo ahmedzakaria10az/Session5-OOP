@@ -33,7 +33,7 @@ namespace Session5_OOP
             }
         }
         
-        public override void PrintShipment()
+        public void PrintShipment()
         {
             Console.WriteLine($"Tracking Code: {TrackingCode}");
             Console.WriteLine($"Description: {Description}");

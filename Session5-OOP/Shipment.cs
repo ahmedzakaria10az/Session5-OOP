@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Session5_OOP
 {
-    internal abstract class Shipment
+    internal class Shipment : ITrackable
     {
         private string trackingCode = "";
         private string description = "";
@@ -12,6 +12,12 @@ namespace Session5_OOP
         private decimal deliveryFee;
 
         public static int TotalShipmentsCreated = 0;
+
+        public  string GetTrackingStatus()
+        {
+            return "Invalid";
+        }
+
 
         public string TrackingCode
         {
@@ -63,8 +69,13 @@ namespace Session5_OOP
 
         public DeliveryAddress Destination { get; set; }
 
-        public abstract decimal EstimatedCost { get; }
-
+        public virtual decimal EstimatedCost
+        {
+            get
+            {
+                return DeliveryFee + (Weight * 5);
+            }
+        }
         public Shipment(string code)
         {
             TrackingCode = code;
@@ -111,8 +122,7 @@ namespace Session5_OOP
             }
         }
 
-        public abstract void PrintShipment();
-
+        
         public Shipment CopyShipment()
         {
             return (Shipment)MemberwiseClone();

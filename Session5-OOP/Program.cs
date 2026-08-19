@@ -150,7 +150,17 @@ namespace Session5_OOP
             #endregion
 
             #region 7  Static Class
-            DeliveryUtilities.PrintSystemTitle();
+            //DeliveryUtilities.PrintSystemTitle();
+
+            #endregion
+
+            #region 8  Extension Methods
+            DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10); 
+            StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
+
+            Console.WriteLine(shipment1.GetSummary());
+            Console.WriteLine(shipment1.IsDelivered());
+
             #endregion
             #endregion
         }
