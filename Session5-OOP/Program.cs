@@ -77,14 +77,29 @@ namespace Session5_OOP
             #region Part 02 — Practical
 
             #region 1  Object Copying
+            //DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
+            //StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
+
+            //Shipment shipment2 = shipment1;
+            //Console.WriteLine($"Reference Copy: {ReferenceEquals(shipment1, shipment2)}");
+
+            //Shipment shipment3 = shipment1.CopyShipment();
+            //Console.WriteLine($"Object Copy: {ReferenceEquals(shipment1, shipment3)}");
+
+            #endregion
+
+            #region 2  Shallow Copy
             DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
             StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
 
-            Shipment shipment2 = shipment1;
-            Console.WriteLine($"Reference Copy: {ReferenceEquals(shipment1, shipment2)}");
+            Shipment shipment2 = shipment1.ShallowCopy();
+            Console.WriteLine($"Shipment Object: {ReferenceEquals(shipment1, shipment2)}");
+            Console.WriteLine($"Address Object: {ReferenceEquals(shipment1.Destination, shipment2.Destination)}");
 
-            Shipment shipment3 = shipment1.CopyShipment();
-            Console.WriteLine($"Object Copy: {ReferenceEquals(shipment1, shipment3)}");
+            shipment2.Destination.City = "Alex";
+
+            Console.WriteLine($"Original City: {shipment1.Destination.City}");
+            Console.WriteLine($"Copied City: {shipment2.Destination.City}");
 
             #endregion
             #endregion
