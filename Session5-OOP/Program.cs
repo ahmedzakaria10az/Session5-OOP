@@ -140,12 +140,17 @@ namespace Session5_OOP
             #endregion
 
             #region 6  Static Method
-            DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
-            StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
-            ExpressShipment shipment2 = new ExpressShipment("AA02", "Mobile", 6, 120, address, 30);
-            InternationalShipment shipment3 = new InternationalShipment("AA03", "Camera", 7, 150, "Spain", 50, address);
-            
-            Console.WriteLine($"Total Shipments Created: {Shipment.GetTotalShipmentsCreated()}");
+            //DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
+            //StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
+            //ExpressShipment shipment2 = new ExpressShipment("AA02", "Mobile", 6, 120, address, 30);
+            //InternationalShipment shipment3 = new InternationalShipment("AA03", "Camera", 7, 150, "Spain", 50, address);
+
+            //Console.WriteLine($"Total Shipments Created: {Shipment.GetTotalShipmentsCreated()}");
+
+            #endregion
+
+            #region 7  Static Class
+            DeliveryUtilities.PrintSystemTitle();
             #endregion
             #endregion
         }
