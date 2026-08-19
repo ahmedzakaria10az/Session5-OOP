@@ -55,7 +55,7 @@
             //no,cannot create an object from a static class because the static members are accessed using the class name
 
             #endregion
-
+            
             #region Q4  Extension Methods
             //a) What is an Extension Method?
             //let me to add new method to existing types without modifying the original type or creating a new derived type
