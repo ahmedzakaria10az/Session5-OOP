@@ -137,5 +137,11 @@ namespace Session5_OOP
             TotalShipmentsCreated = 0;
             Console.WriteLine("static initialization has happened");
         }
+
+        public static int GetTotalShipmentsCreated()
+        {
+            return TotalShipmentsCreated;
+
+        }
     }
 }
