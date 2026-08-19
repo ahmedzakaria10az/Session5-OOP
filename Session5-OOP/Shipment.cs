@@ -11,6 +11,7 @@ namespace Session5_OOP
         private decimal weight;
         private decimal deliveryFee;
 
+        public static int TotalShipmentsCreated = 0;
 
         public string TrackingCode
         {
@@ -80,6 +81,7 @@ namespace Session5_OOP
             Weight = weight;
             DeliveryFee = fee;
             Destination = destination;
+            TotalShipmentsCreated++;
 
         }
 
