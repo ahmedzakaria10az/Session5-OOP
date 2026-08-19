@@ -1,4 +1,6 @@
-﻿namespace Session5_OOP
+﻿using System.Net;
+
+namespace Session5_OOP
 {
     internal class Program
     {
@@ -55,7 +57,7 @@
             //no,cannot create an object from a static class because the static members are accessed using the class name
 
             #endregion
-            
+
             #region Q4  Extension Methods
             //a) What is an Extension Method?
             //let me to add new method to existing types without modifying the original type or creating a new derived type
@@ -72,9 +74,19 @@
             #endregion
             #endregion
 
-            #region Q4  Extension Methods
+            #region Part 02 — Practical
 
-         
+            #region 1  Object Copying
+            DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
+            StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
+
+            Shipment shipment2 = shipment1;
+            Console.WriteLine($"Reference Copy: {ReferenceEquals(shipment1, shipment2)}");
+
+            Shipment shipment3 = shipment1.CopyShipment();
+            Console.WriteLine($"Object Copy: {ReferenceEquals(shipment1, shipment3)}");
+
+            #endregion
             #endregion
         }
     }
