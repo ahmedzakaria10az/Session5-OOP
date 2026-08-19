@@ -73,7 +73,7 @@ namespace Session5_OOP
             DeliveryFee = 50;
         }
 
-
+      
         public Shipment(string code, string desc, decimal weight, decimal fee, DeliveryAddress destination)
         {
             TrackingCode = code;
@@ -81,8 +81,8 @@ namespace Session5_OOP
             Weight = weight;
             DeliveryFee = fee;
             Destination = destination;
-            TotalShipmentsCreated++;
 
+            TotalShipmentsCreated++;
         }
 
 
@@ -130,6 +130,12 @@ namespace Session5_OOP
             copy.Destination = new DeliveryAddress(Destination.City,Destination.Street,Destination.BuildingNumber);
 
             return copy;
+        }
+
+        static Shipment()
+        {
+            TotalShipmentsCreated = 0;
+            Console.WriteLine("static initialization has happened");
         }
     }
 }
