@@ -19,7 +19,7 @@
 
             #endregion
 
-            #region Q1  Object Copying
+            #region Q2  Shallow Copy vs Deep Copy
             //a) What is a Shallow Copy?
             //create new object and copies all value type fields as actual data, for reference type fields only the reference are copied - both objects point to the same object
 
