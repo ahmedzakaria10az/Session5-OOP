@@ -120,5 +120,14 @@ namespace Session5_OOP
         {
             return (Shipment)MemberwiseClone();
         }
+
+        public Shipment DeepCopy()
+        {
+            Shipment copy = (Shipment)MemberwiseClone();
+
+            copy.Destination = new DeliveryAddress(Destination.City,Destination.Street,Destination.BuildingNumber);
+
+            return copy;
+        }
     }
 }

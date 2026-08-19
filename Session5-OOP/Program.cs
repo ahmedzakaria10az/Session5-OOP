@@ -89,17 +89,38 @@ namespace Session5_OOP
             #endregion
 
             #region 2  Shallow Copy
+            //DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
+            //StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
+
+            //Shipment shipment2 = shipment1.ShallowCopy();
+            //Console.WriteLine($"Shipment Object: {ReferenceEquals(shipment1, shipment2)}");
+            //Console.WriteLine($"Address Object: {ReferenceEquals(shipment1.Destination, shipment2.Destination)}");
+
+            //shipment2.Destination.City = "Alex";
+
+            //Console.WriteLine($"Original City: {shipment1.Destination.City}");
+            //Console.WriteLine($"Copied City: {shipment2.Destination.City}");
+
+            #endregion
+
+            #region 3  Deep Copy
             DeliveryAddress address = new DeliveryAddress("Cairo", "Nasr Street", 10);
             StandardShipment shipment1 = new StandardShipment("AA01", "Laptop", 5, 100, address);
 
-            Shipment shipment2 = shipment1.ShallowCopy();
-            Console.WriteLine($"Shipment Object: {ReferenceEquals(shipment1, shipment2)}");
-            Console.WriteLine($"Address Object: {ReferenceEquals(shipment1.Destination, shipment2.Destination)}");
+            Shipment shipment2 = shipment1.DeepCopy();
 
-            shipment2.Destination.City = "Alex";
+            Console.WriteLine($"Original before change: {shipment1.Destination.City}");
+            Console.WriteLine($"Copied before change: {shipment2.Destination.City}");
+            Console.WriteLine("-------------------------------------------------");
 
-            Console.WriteLine($"Original City: {shipment1.Destination.City}");
-            Console.WriteLine($"Copied City: {shipment2.Destination.City}");
+            shipment2.Destination.City = "Giza";
+
+            Console.WriteLine($"Original after change: {shipment1.Destination.City}");
+            Console.WriteLine($"Copied after change: {shipment2.Destination.City}");
+            Console.WriteLine("-------------------------------------------------");
+
+            Console.WriteLine($"Same DeliveryAddress object: {ReferenceEquals(shipment1.Destination, shipment2.Destination)}");
+
 
             #endregion
             #endregion
